@@ -110,7 +110,7 @@ const select = {
         const activeProduct = document.querySelector(select.all.menuProductsActive);
         
         /* if there is active product and it's not thisProduct.element, remove class active from it */
-        if (activeProduct != null && activeProduct != thisProduct.element){
+        if (activeProduct && activeProduct != thisProduct.element){
           activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
         }
         /* toggle active class on thisProduct.element */
@@ -198,7 +198,7 @@ const select = {
       //console.log('*** App starting ***');
       //console.log('thisApp:', thisApp);
       //console.log('classNames:', classNames);
-      //console.log('settings:', settings);
+      console.log('settings:', settings);
       //console.log('templates:', templates);
 
       thisApp.initData();
