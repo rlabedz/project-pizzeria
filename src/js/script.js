@@ -164,26 +164,28 @@ const select = {
 
           //find option image
           const optionImage = thisProduct.imageWrapper.querySelector("."+paramId+"-"+optionId);
-          console.log("."+paramId+"-"+optionId);
+          //console.log("."+paramId+"-"+optionId);
           //console.log(optionImage);
           
+          const optionSelected = formData[paramId] && formData[paramId].includes(optionId)
+
           //check if the image was found
           if(optionImage){
 
             //check if there is param with name of paramID in formData and if it includes optionID
-            if(formData[paramId] && formData[paramId].includes(optionId)){
+            if(optionSelected){
             
             //add class active to image
               optionImage.classList.add(classNames.menuProduct.imageVisible);
             } else {
-              
+
             //remove class active from image
               optionImage.classList.remove(classNames.menuProduct.imageVisible)
             }
           //end loop optionImage
           }
           // check if there is param with a name of paramId in formData and if it includes optionId
-          if(formData[paramId] && formData[paramId].includes(optionId)) {
+          if(optionSelected) {
 
             // check if the option is not default
             if(!option.default == true) {
